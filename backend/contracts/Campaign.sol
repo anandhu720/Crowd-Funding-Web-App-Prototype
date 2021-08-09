@@ -1,6 +1,7 @@
 pragma solidity ^0.4.17;
 
 contract Campaign {
+    
     struct Request {
         string description;
         uint value;

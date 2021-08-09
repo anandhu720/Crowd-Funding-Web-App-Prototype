@@ -1,23 +1,50 @@
-import React, { useEffect } from 'react'
+import React from 'react';
+import { Container,Card,Button } from 'semantic-ui-react';
 import factory from '../backend/factory';
+import 'semantic-ui-css/semantic.min.css'
 
-const inter = () => {
+import Layout from '../components/Layout';
 
-    useEffect(() => {
-        const getDeploy = async () => {
-           const campaigns =  await factory.methods.getDeployedCampaigns().call();
+class CampaignIndex extends React.Component {
 
-           console.log(campaigns);
-        }
-        getDeploy();
+    static getInitialProps = async () => {
+        const campaigns = await factory.methods.getDeployedCampaigns().call();
 
-    },[factory]);
-    
-    return (
-        <div>
-            testing
-        </div>
-    )
+        return {
+            campaigns: campaigns
+        };
+    }
+
+    renderCampaigns = () => {
+        const items = this.props.campaigns.map((address) => {
+            return {
+                header:address,
+                description:<a>View Campaign</a>,
+                fluid:true
+            }
+        });
+
+        return <Card.Group items={items} />
+    }
+
+
+    render() {
+        return(
+        <Container>
+            <Layout>
+                <h3>Open Campaigns</h3>
+                
+                <Button 
+                    content="create campaign"
+                    icon="add circle"
+                    primary
+                    floated="right"
+                />
+                {this.renderCampaigns()}
+            </Layout>
+        </Container>
+    )}
 }
 
-export default inter
+export default CampaignIndex;
+
