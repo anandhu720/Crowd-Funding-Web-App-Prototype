@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container,Card,Button } from 'semantic-ui-react';
+import { Card,Button } from 'semantic-ui-react';
 import factory from '../backend/factory';
-import 'semantic-ui-css/semantic.min.css'
+
 
 import Layout from '../components/Layout';
 
@@ -30,7 +30,7 @@ class CampaignIndex extends React.Component {
 
     render() {
         return(
-        <Container>
+        <>
             <Layout>
                 <h3>Open Campaigns</h3>
                 
@@ -42,7 +42,7 @@ class CampaignIndex extends React.Component {
                 />
                 {this.renderCampaigns()}
             </Layout>
-        </Container>
+        </>
     )}
 }
 
