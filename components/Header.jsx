@@ -9,7 +9,7 @@ const Header = () => {
             marginTop: '10px'
         }}>
             <Link route='/'>
-                <a className="item">CrowdCoin</a>
+                <a className="item">Crowd Funding</a>
             </Link>
             <Menu.Menu position="right">
                 <Link route='/'>
