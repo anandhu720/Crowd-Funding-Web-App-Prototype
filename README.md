@@ -2,7 +2,7 @@
 
 ##  AN ETHEREUM BASED BLOCK CHAIN APPLICATION.
 
-Ii is a CROWD FUNDING D-App prototype made using Ethereum block chain network.This project is 
+It is a CROWD FUNDING D-App prototype made using Ethereum block chain network.This project is 
 hosted in Rinkeby Test Network.This project is inspired from [Kick starter website](https://www.kickstarter.com/).
 
 - Completely functionable website
