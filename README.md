@@ -10,6 +10,9 @@ hosted in Rinkeby Test Network.This project is inspired from [Kick starter websi
 - Responsive
 - ✨frontend using Next.js
 
+## Website
+https://crowd-funding-prototype.vercel.app/
+
 ## Tech Used
 
 - Next.js
