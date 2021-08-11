@@ -1,9 +1,10 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import Campaign from '../../backend/campaign';
-import { Card,Grid } from 'semantic-ui-react';
+import { Button, Card,Grid } from 'semantic-ui-react';
 import web3 from '../../backend/web3';
 import Form from '../../components/Form';
+import { Link } from '../../routes/routes';
 
 class CampaignShow extends React.Component {
 
@@ -12,9 +13,8 @@ class CampaignShow extends React.Component {
 
         const summary = await campaign.methods.grtSummary().call();
 
-        console.log(summary);
-
         return {
+            address:props.query.address,
             minimumContribution:summary[0],
             balance:summary[1],
             requestCount:summary[2],
@@ -82,9 +82,15 @@ class CampaignShow extends React.Component {
                         {this.renderCards()}
                     </Grid.Column>
                     <Grid.Column computer={6} mobile={16}>
-                        <Form />
+                        <Form address={this.props.address} />
                     </Grid.Column>
                 </Grid>
+                <br /><br />
+                <Link route={`/campaigns/${this.props.address}/requests`}>
+                    <a>
+                        <Button primary>View All Requests</Button>
+                    </a>
+                </Link>
             </Layout>
         )
     }
