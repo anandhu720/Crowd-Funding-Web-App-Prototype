@@ -11,6 +11,7 @@ hosted in Rinkeby Test Network.This project is inspired from [Kick starter websi
 - ✨frontend using Next.js
 
 ## Website
+You have to install metamask browser extension to run this website
 https://crowd-funding-prototype.vercel.app/
 
 ## Tech Used
